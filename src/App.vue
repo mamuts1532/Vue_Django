@@ -60,7 +60,8 @@ export default {
     return {
       menu:[
         {ruta:"/", nombre:"Inicio", icono:"mdi-folder"},
-        {ruta:"/pixa", nombre:"Imágenes", icono:"mdi-folder"}
+        {ruta:"/pixa", nombre:"Imágenes", icono:"mdi-folder"},
+        {ruta:"/docs", nombre:"Documentos", icono:"mdi-folder"}
       ],
       mostrarMenu:false,
       miniVariant:true

@@ -34,7 +34,12 @@ export default {
         return{
             mostrarModal:false
         }
-    }
+    },
+    mounted() {
+    this.$root.$on('bv::modal::hide', () => {
+       this.mostrarModal = false
+    })
+}
 
 }
 </script>
