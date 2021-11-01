@@ -3,6 +3,11 @@
 
     <v-system-bar>
       <v-app-bar-nav-icon @click.stop="mostrarMenu=!mostrarMenu"></v-app-bar-nav-icon>
+      <v-spacer></v-spacer>
+      <!-- {{ usuario }} -->
+      <v-icon>perm_identity</v-icon>{{ usuario }}
+      <div class="mx-1"></div>
+      <v-icon @click="logout">logout</v-icon>
     </v-system-bar>
     <v-navigation-drawer 
     v-model="mostrarMenu" 
@@ -20,7 +25,7 @@
           <v-list-item link>
             <v-list-item-content>
               <v-list-item-title class="text-h6">
-                Curso Vue + Django
+                Vue + Django
               </v-list-item-title>
               <v-list-item-subtitle>Jorge Guevara</v-list-item-subtitle>
             </v-list-item-content>
@@ -59,12 +64,36 @@ export default {
   data(){
     return {
       menu:[
-        {ruta:"/", nombre:"Inicio", icono:"mdi-folder"},
-        {ruta:"/pixa", nombre:"Imágenes", icono:"mdi-folder"},
-        {ruta:"/docs", nombre:"Documentos", icono:"mdi-folder"}
+        {ruta:"/", nombre:"Inicio", icono:"home"},
+        {ruta:"/pixa", nombre:"Imágenes", icono:"image_search"},
+        {ruta:"/docs", nombre:"Documentos", icono:"grading"},
+        {ruta:"/siscmpfc", nombre:"SisCmpFc", icono:"storefront"}
+
       ],
       mostrarMenu:false,
-      miniVariant:true
+      miniVariant:true,
+      // usuario: localStorage.getItem("usuario")
+      usuario: ""
+    }
+  },
+  // mounted(){
+  //   this.$session.set("username","usuario123")
+  //   console.log(this.$session.get("username"))
+  // }
+    mounted(){
+      // localStorage.usuario = "nuevo usuario"
+      // localStorage.setItem("usuario","Nuevo Usuario")
+      this.$root.$on('login',(user)=> this.login(user))
+      console.log(localStorage.getItem("usuario"))
+  },
+  methods:{
+    logout(){
+      localStorage.removeItem("usuario")
+      this.usuario = ""
+      this.$router.push("/login")
+    },
+    login(user){
+      this.usuario = user
     }
   }
 }

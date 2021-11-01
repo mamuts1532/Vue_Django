@@ -22,6 +22,16 @@ const routes = [
         path:"/docs",
         name:"documentos",
         component:Documentos
+    },
+    {
+        path:"/siscmpfc",
+        name:"siscmpfc",
+        component: ()=> import('./components/siscmpfc/Principal')
+    },
+    {
+        path:"/login",
+        name:"login",
+        component: ()=> import('./components/login/Login')
     }
 ]
 

@@ -3,7 +3,8 @@
     <b-container>
         <b-row>
             <b-col>
-                <h1>Bienvenidos al Curso Vue + Django <small>x Daniel Bojorge</small></h1>
+                <!-- <h1>Vue + Django {{ prueba }}<small></small></h1> -->
+                <h1>Vue + Django <small></small></h1>
                 <img src="../assets/vue+django.png" alt="" width="100%" height="auto">
             </b-col>
         </b-row>
@@ -44,7 +45,8 @@ export default {
                     url:"https://www.google.com/",
                     color: "danger"
                 }
-          ]
+          ],
+        //   prueba: this.$session.get("username")
       }
   }
 
