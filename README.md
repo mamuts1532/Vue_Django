@@ -1,5 +1,11 @@
 # vue-django
 
+Frontend de de varias aplicaciones con Vue.js Frameword:
+
+1. Aplicación conectada a Api proveedora de imágenes.
+2. Aplicación para el manejo de alertas por medio de fechas.
+3. Sistema de compra y facturación.
+
 ## Project setup
 ```
 npm install
